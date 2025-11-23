@@ -63,6 +63,5 @@ Future Enhancements
 - Add timer, leaderboard, save/load game 
 - Add difficulty levels (Easy / Medium / Hard) 
 - Add random puzzle generator 
-- Add sound effects and colored grid 
---- 
-End of README
+- Add sound effects and colored grid
+
