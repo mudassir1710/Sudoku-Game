@@ -65,4 +65,4 @@ Future Enhancements
 - Add random puzzle generator 
 - Add sound effects and colored grid 
 --- 
-End of READM
+End of README
