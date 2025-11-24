@@ -34,104 +34,19 @@ int solutionBoard[9][9] = {
 int score = 100;
 
 // Show the board
-void displayBoard() {
-    cout << "\nSUDOKU BOARD\n";
-
-    for (int r = 0; r < 9; r++) {
-
-        // horizontal separator after every 3 rows
-        if (r % 3 == 0) {
-            cout << "+-------+-------+-------+\n";
-        }
-
-        for (int c = 0; c < 9; c++) {
-
-            // vertical separator after every 3 columns
-            if (c % 3 == 0) {
-                cout << "| ";
-            }
-
-            if (board[r][c] == 0)
-                cout << ". ";       // show empty as dot (clean look)
-            else
-                cout << board[r][c] << " ";
-        }
-        cout << "|\n";
-    }
-
-    cout << "+-------+-------+-------+\n";
-}
-
+void displayBoard();
 
 // Check if a number can be placed
-bool isValidMove(int r, int c, int num) {
-
-    // Check row
-    for (int i = 0; i < 9; i++) {
-        if (board[r][i] == num) {
-            return false;
-        }
-    }
-
-    // Check column
-    for (int i = 0; i < 9; i++) {
-        if (board[i][c] == num) {
-            return false;
-        }
-    }
-
-    // Check subgrid
-    int startRow = r - (r % 3);
-    int startCol = c - (c % 3);
-
-    for (int i = startRow; i < startRow + 3; i++) {
-        for (int j = startCol; j < startCol + 3; j++) {
-            if (board[i][j] == num) {
-                return false;
-            }
-        }
-    }
-
-    return true;
-}
+bool isValidMove(int r, int c, int num);
 
 // Check if board is fully solved
-bool isBoardComplete() {
-    for (int r = 0; r < 9; r++) {
-        for (int c = 0; c < 9; c++) {
-            if (board[r][c] == 0) {
-                return false;
-            }
-        }
-    }
-    return true;
-}
+bool isBoardComplete();
 
 // Give a hint (copy one cell from solution)
-void giveHint() {
-    for (int r = 0; r < 9; r++) {
-        for (int c = 0; c < 9; c++) {
-            if (board[r][c] == 0) {
-                board[r][c] = solutionBoard[r][c];
-                cout << "\nHint given at (" << r + 1 << ", " << c + 1 << ")\n";
-                score -= 10;
-                return;
-            }
-        }
-    }
-    cout << "No empty cells left for hint.\n";
-}
+void giveHint();
 
 // Auto-correct full solution
-void autoSolve() {
-    for (int r = 0; r < 9; r++) {
-        for (int c = 0; c < 9; c++) {
-            board[r][c] = solutionBoard[r][c];
-        }
-    }
-    cout << "\nThe full correct solution is filled.\n";
-    score -= 20;
-}
+void autoSolve() ;
 
 int main() {
     int choice;
@@ -208,4 +123,93 @@ int main() {
         }
     }
     return 0;
+}
+void displayBoard() {
+    cout << "\nSUDOKU BOARD\n";
+
+    for (int r = 0; r < 9; r++) {
+
+        // horizontal separator after every 3 rows
+        if (r % 3 == 0) {
+            cout << "+-------+-------+-------+\n";
+        }
+
+        for (int c = 0; c < 9; c++) {
+
+            // vertical separator after every 3 columns
+            if (c % 3 == 0) {
+                cout << "| ";
+            }
+
+            if (board[r][c] == 0)
+                cout << ". ";       // show empty as dot (clean look)
+            else
+                cout << board[r][c] << " ";
+        }
+        cout << "|\n";
+    }
+
+    cout << "+-------+-------+-------+\n";
+}
+bool isValidMove(int r, int c, int num) {
+
+    // Check row
+    for (int i = 0; i < 9; i++) {
+        if (board[r][i] == num) {
+            return false;
+        }
+    }
+
+    // Check column
+    for (int i = 0; i < 9; i++) {
+        if (board[i][c] == num) {
+            return false;
+        }
+    }
+
+    // Check subgrid
+    int startRow = r - (r % 3);
+    int startCol = c - (c % 3);
+
+    for (int i = startRow; i < startRow + 3; i++) {
+        for (int j = startCol; j < startCol + 3; j++) {
+            if (board[i][j] == num) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+bool isBoardComplete() {
+    for (int r = 0; r < 9; r++) {
+        for (int c = 0; c < 9; c++) {
+            if (board[r][c] == 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+void giveHint() {
+    for (int r = 0; r < 9; r++) {
+        for (int c = 0; c < 9; c++) {
+            if (board[r][c] == 0) {
+                board[r][c] = solutionBoard[r][c];
+                cout << "\nHint given at (" << r + 1 << ", " << c + 1 << ")\n";
+                score -= 10;
+                return;
+            }
+        }
+    }
+    cout << "No empty cells left for hint.\n";
+}
+void autoSolve() {
+    for (int r = 0; r < 9; r++) {
+        for (int c = 0; c < 9; c++) {
+            board[r][c] = solutionBoard[r][c];
+        }
+    }
+    cout << "\nThe full correct solution is filled.\n";
+    score -= 20;
 }
