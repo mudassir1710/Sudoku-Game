@@ -6,9 +6,9 @@ A simple console-based Sudoku game developed using basic C++ concepts.
 --- 
 Team Members & Roles
  Project Members: 
-Khizer Hayyat 
-M. Rayyan Bilal 
-Mudassir Azam 
+Khizer Hayyat-Logic Designer + Coder 
+Mudassir Azam- Git Manager + Documentation
+M Rayyan Bilal-Tester + Logic Designer
 --- 
 Overview
 This project is a 9×9 Sudoku game designed for beginners learning C++ programming. 
