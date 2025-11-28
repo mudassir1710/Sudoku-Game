@@ -4,7 +4,7 @@ This repository contains a simple C++ implementation of a Sudoku game, allowing 
 Sudoku Game in C++ 
 A simple console-based Sudoku game developed using basic C++ concepts. 
 --- 
-Team Members & Roles:<br>
+#Team Members & Roles:<br>
 Khizer Hayyat-Logic Designer + Coder<br> 
 Mudassir Azam- Git Manager + Documentation<br>
 M Rayyan Bilal-Tester + Logic Designer<br>
