@@ -1,8 +1,7 @@
 
 # Sudoku-Game
-This repository contains a simple C++ implementation of a Sudoku game, allowing users to fill numbers in a 9×9 grid...
-Sudoku Game in C++ 
-A simple console-based Sudoku game developed using basic C++ concepts. 
+- This repository contains a simple C++ implementation of a Sudoku game, allowing users to fill numbers in a 9×9 grid...
+- A simple console-based Sudoku game developed using basic C++ concepts. 
 --- 
 # Team Members & Roles:<br>
 - Khizer Hayyat-> Logic Designer + Coder<br> 
